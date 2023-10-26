@@ -1,27 +1,25 @@
 
-
-let last = (arr : any[]): any => {
-    return arr[arr.length - 1]
+const last = (arr : any[]): any => {
+    if (arr.length > 0)
+        return arr[arr.length - 1]
+    return null
 }
 
-let prepend = (arr : any[], item : any): any[] => {
-    arr[0] = item
-    return arr
+const prepend = (arr : any[], item : any): any[] => {
+    const copy_arr = [item, ...arr]
+    return copy_arr
 }
 
-let mix = (arr1 : any[], arr2 : any[]): any[] => {
-    let arr0 = arr1.concat(arr2)
-    return arr0
+const mix = (arr1 : any[], arr2 : any[]): any[] => {
+    const concated_arr= arr1.concat(arr2)
+    return concated_arr
 }
 
-let count = (arr: any[]): number => {
+const count = (arr: any[]): number => {
     return arr.length
 }
 
-
-let findIndex = (arr: any[], item: any): number|null => {
-    let flag : boolean
-
+const findIndex = (arr: any[], item: any): number|null => {
     for (let idx = 0; idx < arr.length; idx++) {
         if (arr[idx] === item)
             return idx
@@ -29,7 +27,7 @@ let findIndex = (arr: any[], item: any): number|null => {
     return null
 }
 
-let slice = (arr: any[], startIndex: number, endIndex: number) : any => {
+const slice = (arr: any[], startIndex: number, endIndex: number) : any => {
     if (typeof endIndex === undefined)
         return arr.slice(startIndex)
     return arr.slice(startIndex, endIndex)
